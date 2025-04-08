@@ -1,0 +1,1312 @@
+/* Variables */
+:root {
+    --primary-green: #a3e635; /* Bright green accent */
+    --dark-text: #1a1a1a;
+    --light-text: #ffffff;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Foro', sans-serif; /* Replace with fallback if needed */
+  }
+  
+  /* Global Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: var(--font-primary);
+    background-color: #ffffff;
+    color: var(--dark-text);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    background-color: transparent; /* Initially transparent */
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+    box-shadow: none;
+  }
+  .navbar.scrolled {
+    /* Glassmorphism style: semi-transparent with blur */
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .logo {
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white; /* Initially white over hero image */
+    transition: color 0.3s ease;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: white; /* Initially white */
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  /* Underline Hover Effect */
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-green);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .nav-links a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  /* Change nav link colors when navbar is scrolled */
+  .navbar.scrolled .nav-links a,
+  .navbar.scrolled .logo {
+    color: var(--dark-text);
+  }
+  
+  /* Hamburger for Mobile */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white; /* Initially white */
+    transition: background-color 0.3s ease;
+  }
+  .navbar.scrolled .hamburger span {
+    background-color: var(--dark-text);
+  }
+  
+  /* Sidebar for Mobile Navigation */
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    right: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+  }
+  .sidebar a {
+    padding: 8px 32px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--dark-text);
+    display: block;
+    transition: 0.3s;
+  }
+  .sidebar a:hover {
+    color: var(--primary-green);
+  }
+  .sidebar .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Responsive Navbar Adjustments */
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+  
+  /* Hero Section */
+  /* Removed margin-top so the hero fills the full viewport */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Hero Slides */
+  .hero-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+  .hero-slide.active {
+    opacity: 1;
+    /* Apply the continuous zoom in and zoom out effect */
+    animation: zoomInOut 12s infinite;
+  }
+  
+  /* Zoom In/Out Animation (zooming in then zooming out below original scale) */
+  @keyframes zoomInOut {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Hero Content Overlay */
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 5%;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.1)
+    );
+  }
+  .hero-content h1 {
+    font-size: 6rem;
+    font-family: var(--font-secondary);
+    color: var(--light-text);
+    margin-bottom: 0.5rem;
+    max-width: 1000px;
+    line-height: 1.2;
+    animation: pulseGlow 3s infinite;
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% {
+      text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.9),
+        0 0 20px rgba(255, 255, 255, 0.7),
+        0 0 30px rgba(163, 230, 53, 0.6);
+    }
+    50% {
+      text-shadow: 
+        0 0 20px rgba(255, 255, 255, 1),
+        0 0 30px rgba(255, 255, 255, 0.9),
+        0 0 40px rgba(163, 230, 53, 0.8);
+    }
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+    color: #f0f0f0;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+  /* Button */
+  .btn {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: var(--dark-text);
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 0.3rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .btn:hover {
+    background-color: #c5ff7e;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Hero Content */
+  @media screen and (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+    }
+  }
+
+
+
+/* =========================
+   BUILDING BRIDGES SECTION
+   ========================= */
+   .fast-fund-section {
+    position: relative;
+    width: 100%;
+    padding: 5rem 5% 6rem;
+    overflow: hidden;
+    color: var(--dark-text);
+    /* Optional subtle gradient backdrop behind everything */
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    );
+  }
+  
+  /* 1) WAVY SHAPES (TOP & BOTTOM) ---------------------------------- */
+  /* You can swap out wave SVG images or shapes to suit your brand. */
+  .wave-shape-top,
+  .wave-shape-bottom {
+    position: absolute;
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    left: 0;
+    z-index: -4;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .wave-shape-top {
+    top: 0;
+    background-image: url('https://via.placeholder.com/1920x200?text=Wave+Shape+Top');
+  }
+  
+  .wave-shape-bottom {
+    bottom: 0;
+    background-image: url('https://via.placeholder.com/1920x200?text=Wave+Shape+Bottom');
+  }
+  
+  /* 2) PARALLAX BACKGROUND ------------------------------------------ */
+  .parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Replace with your own background or gradient */
+    background: url('children.jpg') center/cover no-repeat;
+    background-attachment: fixed; /* Parallax effect */
+    z-index: -3;
+    opacity: 0.2; /* Subtle overlay */
+  }
+  
+  /* 3) FLOATING DECORATIVE ELEMENTS --------------------------------- */
+  /* Primary floating circle */
+  .floating-obj {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(
+      circle,
+      rgba(163, 230, 53, 0.5) 0%,
+      rgba(163, 230, 53, 0.2) 60%,
+      transparent 100%
+    );
+    border-radius: 50%;
+    z-index: -1;
+    animation: floatUpDown 6s ease-in-out infinite;
+  }
+  
+  /* Secondary floating shape (for extra style) */
+  .floating-obj-2 {
+    position: absolute;
+    bottom: 20%;
+    right: 5%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.2) 60%,
+      transparent 100%
+    );
+    border-radius: 10%;
+    z-index: -1;
+    animation: floatLeftRight 8s ease-in-out infinite;
+  }
+  
+  /* Bobs up and down */
+  @keyframes floatUpDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  /* Floats left to right */
+  @keyframes floatLeftRight {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-20px);
+    }
+  }
+  
+  /* 4) CONTENT WRAPPER ---------------------------------------------- */
+  .fast-fund-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .fast-fund-content h2 {
+    font-family: var(--font-secondary);
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--dark-text);
+    /* Optional text shadow for extra pop */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .fast-fund-content h2 span {
+    color: var(--primary-green);
+  }
+  .fast-fund-content p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.6;
+    color: #444;
+  }
+  
+  /* 5) CARDS LAYOUT ------------------------------------------------- */
+  .fast-fund-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* 6) GLASSMORPHISM CARD ------------------------------------------- */
+  .fast-fund-card {
+    position: relative;
+    /* Glass effect background + gradient border */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  
+    /* Optional gradient border approach:
+       border: 1px solid transparent;
+       border-image: linear-gradient(45deg, var(--primary-green), #ffffff);
+       border-image-slice: 1; 
+    */
+  
+    padding: 2rem;
+    text-align: left;
+    color: var(--dark-text);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect: slight lift & deeper shadow */
+  .fast-fund-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Icon styling with hover animation */
+  .fast-fund-card .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-green);
+    transition: transform 0.3s ease;
+  }
+  .fast-fund-card:hover .icon {
+    animation: iconPulse 1s infinite alternate;
+  }
+  
+  /* Keyframe for pulsing icon */
+  @keyframes iconPulse {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
+  }
+  
+  .fast-fund-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+  }
+  .fast-fund-card p {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* 7) RESPONSIVE TWEAKS -------------------------------------------- */
+  @media screen and (max-width: 768px) {
+    .fast-fund-content h2 {
+      font-size: 2rem;
+    }
+    .fast-fund-content p {
+      font-size: 1rem;
+    }
+    /* Hide some floating objects on smaller screens if desired */
+    .floating-obj {
+      display: none;
+    }
+    .floating-obj-2 {
+      display: none;
+    }
+  }
+
+
+
+
+
+/* ===========================
+   URGENT FUNDRAISING SECTION
+   =========================== */
+   .urgent-fundraising-section {
+    position: relative;
+    width: 100%;
+    padding: 5rem 5% 6rem;
+    color: var(--dark-text);
+    overflow: hidden;
+  }
+  
+  /* Parallax Background */
+  .parallax-bg2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Replace 'greenfund.jpg' with the actual large BG you prefer */
+    background: url('greenfund.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    z-index: -2;
+    opacity: 0.2; 
+  }
+  
+  /* Content Wrapper */
+  .urgent-fundraising-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .urgent-fundraising-content h2 {
+    font-family: var(--font-secondary);
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--dark-text);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .urgent-fundraising-content h2 span {
+    color: var(--primary-green);
+  }
+  
+  .urgent-fundraising-content p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+    color: #444;
+  }
+  
+  /* Grid Layout for Cards */
+  .fundraising-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Slightly bigger min-width so images can appear larger */
+    gap: 2rem;
+  }
+  
+  /* Glassmorphism Cards */
+  .fundraising-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.5rem;
+    color: var(--dark-text);
+    text-align: left;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .fundraising-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Large Image on Top */
+  .card-image {
+    width: 100%;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+  .card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+  
+  /* Organization & Campaign Info */
+  .campaign-info {
+    margin-bottom: 0.5rem;
+  }
+  .org {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 0.25rem;
+  }
+  .verified-icon {
+    color: var(--primary-green);
+    margin-left: 0.3rem;
+  }
+  .fundraising-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    color: var(--dark-text);
+  }
+  
+  /* Campaign Description */
+  .campaign-desc {
+    line-height: 1.5;
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 1.2rem;
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    position: relative;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+  .progress {
+    height: 100%;
+    background-color: var(--primary-green);
+    border-radius: 5px;
+    transition: width 0.5s ease;
+  }
+  
+  /* Fund Info (Raised & Time Left) */
+  .fund-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  /* 8) RESPONSIVE TWEAKS */
+  @media screen and (max-width: 768px) {
+    .urgent-fundraising-content h2 {
+      font-size: 2rem;
+    }
+  
+    .urgent-fundraising-content p {
+      font-size: 1rem;
+    }
+  
+    .floating-obj,
+    .floating-obj-2 {
+      display: none; /* Hide floating objects on smaller screens */
+    }
+  }
+
+
+
+  /* ===============================
+   GLOBAL COMMUNITY SECTION
+   =============================== */
+.global-community-section {
+    position: relative;
+    width: 100%;
+    padding: 5rem 5% 6rem;
+
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  /* 1) FLOATING IMAGES - BLACK & WHITE */
+  .floating-img {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    animation: floatPhotos 8s ease-in-out infinite alternate;
+  }
+  .floating-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  /* Optional hover effect to reduce grayscale */
+  .floating-img:hover img {
+    filter: grayscale(80%);
+    transform: scale(1.03);
+  }
+  
+  /* Example positions for your reference:
+     Adjust as needed to replicate your design, or
+     add more images with unique classes. */
+  .img1 {
+    top: 10%;
+    left: 5%;
+    width: 140px; /* Adjust size as you like */
+  }
+  .img2 {
+    top: 20%;
+    right: 5%;
+    width: 150px;
+  }
+  .img3 {
+    bottom: 20%;
+    left: 10%;
+    width: 160px;
+  }
+  .img4 {
+    bottom: 10%;
+    right: 10%;
+    width: 120px;
+  }
+  
+  /* Float animation keyframe */
+  @keyframes floatPhotos {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
+  /* Global Content Wrapper (unchanged) */
+.global-content {
+    position: relative;
+    z-index: 2; 
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  /* Smaller main heading above the big number */
+  .global-content h2 {
+    font-family: var(--font-secondary);
+    font-size: 3rem;        /* Slightly smaller */
+    line-height: 1.2;
+    margin-bottom: 0.5rem;  /* Less space to keep the number closer */
+    color: var(--dark-text);
+  }
+  
+  /* Large Highlight Number on its own line */
+  .highlight-number {
+    font-size: 4.5rem;      /* Increase for a bigger pop */
+    line-height: 1.1;
+    color: var(--primary-green);
+    margin-bottom: 0.5rem;  /* Space before the subtitle */
+    display: block;
+  }
+  
+  /* Subtitle below the big number */
+  .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Description (unchanged) */
+  .description {
+    font-size: 1rem;
+    color: #444;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }
+  
+  /* CTA Button (unchanged) */
+  .join-btn {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: var(--dark-text);
+    padding: 0.9rem 1.8rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .join-btn:hover {
+    background-color: #c5ff7e;
+    transform: translateY(-3px);
+  }
+ 
+  
+  /* 3) RESPONSIVE TWEAKS */
+  @media screen and (max-width: 768px) {
+    .floating-img {
+      display: none; /* Hide floating images on smaller screens if desired */
+    }
+    .global-content h2 {
+      font-size: 2rem;
+    }
+    .highlight-number {
+      font-size: 2.5rem;
+    }
+    .subtitle,
+    .description {
+      font-size: 0.95rem;
+    }
+  }
+
+
+
+
+
+
+  /* ===========================
+   STORIES OF HOPE SECTION
+   =========================== */
+.stories-of-hope-section {
+    position: relative;
+    width: 100%;
+    padding: 5rem 5% 6rem;
+    overflow: hidden;
+  
+    text-align: center;
+  }
+  
+  /* 1) PARALLAX BACKGROUND */
+  .stories-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Example parallax BG image (replace with actual) */
+    background: url('hopebridge1.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    z-index: -2;
+    opacity: 0.2;
+  }
+  
+  /* 2) FLOATING DECORATIVE ELEMENTS */
+  .floating-shape {
+    position: absolute;
+    z-index: -1;
+    animation: floatAnim 8s ease-in-out infinite alternate;
+    opacity: 0.5; /* subtle */
+  }
+  .shape1 {
+    top: 10%;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(163,230,53,0.4) 0%, rgba(163,230,53,0.3) 70%, transparent 100%);
+    border-radius: 50%;
+  }
+  .shape2 {
+    bottom: 15%;
+    right: 8%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    border-radius: 50%;
+  }
+  
+  /* Keyframe for floating shapes */
+  @keyframes floatAnim {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+  }
+  
+  /* 3) CONTAINER */
+  .stories-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .stories-container h2 {
+    font-family: var(--font-secondary);
+    font-size: 4rem;
+    margin-bottom: 0.75rem;
+    color: var(--dark-text);
+    /* optional text shadow for a nice effect */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .stories-container h2 span {
+    color: var(--primary-green);
+  }
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  /* 4) GRID OF STORY CARDS */
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .story-card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  }
+  .story-image {
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  .story-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  .story-content blockquote {
+    font-style: italic;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+  }
+  .story-author {
+    font-weight: bold;
+    color: var(--dark-text);
+    font-size: 0.95rem;
+  }
+  
+  /* 5) CTA */
+  .stories-cta {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #444;
+  }
+  .stories-btn {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: var(--dark-text);
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .stories-btn:hover {
+    background-color: #c5ff7e;
+    transform: translateY(-2px);
+  }
+  
+  /* 6) RESPONSIVE TWEAKS */
+  @media screen and (max-width: 768px) {
+    .stories-container h2 {
+      font-size: 2rem;
+    }
+    .section-subtitle {
+      font-size: 1rem;
+    }
+    .story-content blockquote {
+      font-size: 0.9rem;
+    }
+    .floating-shape {
+      display: none; /* hide shapes on smaller screens if needed */
+    }
+  }
+
+
+  /* FAQ Section Wrapper */
+  .faq-section {
+    position: relative;  /* Allows absolute child positioning */
+    width: 100%;
+    padding: 5rem 5%;
+    background-color: #fff;
+    color: var(--dark-text);
+    overflow: hidden;    /* Hide floating shape edges if they go out of container */
+  }
+  
+  /* Floating Decorative Element */
+  .faq-floating-obj {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(163, 230, 53, 0.4) 0%,
+      rgba(163, 230, 53, 0.1) 60%,
+      transparent 100%
+    );
+    z-index: 1;
+    animation: floatFaqObj 6s ease-in-out infinite alternate;
+    opacity: 0.7; /* Make it subtle */
+  }
+
+
+  .faq-floating-obj2 {
+    position: absolute;
+    bottom: 15%;
+    right: 8%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+    border-radius: 50%;
+  }
+  
+  /* Bobbing Up & Down Animation */
+  @keyframes floatFaqObj {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  /* FAQ Container */
+  .faq-container {
+    position: relative;
+    z-index: 2; /* Ensure FAQ content is above the floating shape */
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: var(--font-primary);
+  }
+  
+  /* FAQ Heading */
+  .faq-container h2 {
+    font-family: var(--font-secondary);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--dark-text);
+    text-align: center;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* FAQ Items */
+  .faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .faq-item:last-of-type {
+    border-bottom: none;
+  }
+  
+  /* FAQ Question (button) */
+  .faq-question {
+    background: none;
+    font-family: var(--font-primary);
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    transition: color 0.3s ease;
+  }
+  .faq-question span {
+    margin-right: 1rem;
+  }
+  .faq-question:hover {
+    color: var(--primary-green);
+  }
+  .faq-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  /* FAQ Answer (collapsible) */
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0;
+    margin-top: 0.5rem;
+  }
+  .faq-answer p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  /* Expand (aria-expanded) */
+  .faq-question[aria-expanded='true'] .faq-icon {
+    transform: rotate(45deg); /* from + to x or minus shape */
+  }
+  .faq-question[aria-expanded='true'] {
+    color: var(--primary-green);
+  }
+  .faq-question[aria-expanded='true'] ~ .faq-answer {
+    max-height: 400px;
+    opacity: 1;
+  }
+  
+  /* Responsive Media Queries */
+  @media screen and (max-width: 992px) {
+    .faq-container h2 {
+      font-size: 2rem;
+    }
+    .faq-question {
+      font-size: 1.1rem;
+    }
+    .faq-icon {
+      font-size: 1.1rem;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .faq-container h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .faq-question {
+      font-size: 1rem;
+    }
+    .faq-answer p {
+      font-size: 0.95rem;
+    }
+    /* Hide or relocate floating shape on very small screens if desired */
+    .faq-floating-obj {
+      display: none; 
+    }
+  }
+
+
+
+  /* FOOTER WRAPPER */
+  .footer-section {
+    position: relative;
+    width: 100%;
+    padding: 3rem 5% 2rem;
+    color: #fff;
+    overflow: hidden;
+    z-index: 0; /* for pseudo-element stacking */
+  
+    /* Dark gradient + blur for a glassy base */
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(20, 20, 20, 0.7) 100%
+    );
+    backdrop-filter: blur(6px);
+  }
+  
+  /* GLAZE EFFECT (the "sheen") via ::before pseudo-element */
+  .footer-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1; /* sits above the background but below text content */
+    /* Light radial gradient for a subtle glow or sheen */
+    background: radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 255, 255, 0.2) 0%,
+      transparent 80%
+    );
+    /* You can tweak the color/opacity to intensify the glaze */
+  }
+  
+  /* FOOTER CONTAINER */
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    gap: 2rem;
+    position: relative;
+    z-index: 2; /* ensure above the pseudo-element */
+  }
+  
+  /* BRAND COLUMN */
+  .footer-brand {
+    flex: 1 1 250px;
+    min-width: 250px;
+  }
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .brand-logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .brand-logo h3 {
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    margin: 0;
+  }
+  .brand-tagline {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #ccc;
+  }
+  
+  /* LINK COLUMNS */
+  .footer-links {
+    display: flex;
+    flex: 2 1 600px;
+    justify-content: space-evenly;
+    gap: 2rem;
+  }
+  .link-column {
+    min-width: 120px;
+  }
+  .link-column h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-secondary);
+    color: #fff;
+  }
+  .link-column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .link-column li {
+    margin-bottom: 0.5rem;
+  }
+  .link-column a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+  }
+  .link-column a:hover {
+    color: var(--primary-green);
+  }
+  
+  /* DIVIDER */
+  .footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 auto 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* BOTTOM AREA */
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+  }
+  .footer-bottom p {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin: 0;
+  }
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+  }
+  .footer-social a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .footer-social a:hover {
+    background-color: var(--primary-green);
+    color: var(--dark-text);
+    transform: translateY(-3px);
+  }
+  
+  /* RESPONSIVE BREAKPOINTS */
+  @media screen and (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .footer-links {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
