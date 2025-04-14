@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HopeBridge Relocation Agency - Hero</title>
+
+    <!-- Montserrat from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- Animate on Scroll (AOS) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <!-- AOS Animation CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="services.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">HopeBridge</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#about-us">About Us</a>
+        <a href="services.html">How It Works</a>
+        <a href="#donation">Donation</a>
+        <a href="contact.html">Donation</a>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+    <!-- Sidebar for Mobile Navigation -->
+    <div class="sidebar" id="sidebar">
+      <a href="javascript:void(0)" class="closebtn" id="closebtn">&times;</a>
+      <a href="index.html">Home</a>
+      <a href="#about-us">About Us</a>
+      <a href="services.html">How It Works</a>
+      <a href="#donation">Donation</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <section class="services-hero">
+        <!-- Hero Image (Object-Fit: cover) -->
+        <img
+          src="refugeeservices.jpg"
+          alt="HopeBridge Services"
+          class="hero-image"
+          loading="eager"
+        />
+      
+        <!-- Gradient overlay for green tint -->
+        <div class="hero-overlay"></div>
+      
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <!-- Mini Tagline -->
+          <p class="mini-tagline">Bridging Refuge & Opportunity</p>
+      
+          <!-- Hero Title with Glow -->
+          <h1 class="hero-title">HopeBridge Services</h1>
+      
+          <!-- Hero Subtitle -->
+          <p class="hero-subtitle">
+            At HopeBridge, we unite compassionate resources, innovative tools,
+            and unwavering support to empower refugees in securing safe housing,
+            cultural orientation, and sustainable livelihoods. Together, we create
+            pathways to brighter tomorrows.
+          </p>
+      
+          <!-- Down Arrow Link -->
+          <a href="#service-offerings" class="down-arrow">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#fff"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <section class="services-overview" id="services-overview">
+        <!-- Floating Decorative Elements -->
+        <div class="floating-obj obj1"></div>
+        <div class="floating-obj obj2"></div>
+      
+        <div class="services-container">
+          <h2 class="services-title">How HopeBridge Works</h2>
+          <p class="services-intro">
+            At HopeBridge, we believe every refugee deserves a chance to thrive. Through
+            our streamlined process—from arrival to full community integration—we
+            ensure that individuals and families receive the support they need each step
+            of the way.
+          </p>
+      
+          <!-- Services Grid -->
+          <div class="services-grid">
+            <!-- Card 1 -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3>Safe Haven</h3>
+              <p>
+                We arrange secure housing and essential resources, ensuring every refugee
+                begins their journey from a place of stability and safety.
+              </p>
+            </div>
+      
+            <!-- Card 2 -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-icon">
+                <i class="fas fa-language"></i>
+              </div>
+              <h3>Cultural Orientation</h3>
+              <p>
+                Through language classes, community sessions, and local mentorship,
+                refugees adapt swiftly to new environments and cultural norms.
+              </p>
+            </div>
+      
+            <!-- Card 3 -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="card-icon">
+                <i class="fas fa-file-signature"></i>
+              </div>
+              <h3>Legal &amp; Admin Guidance</h3>
+              <p>
+                We offer personalized assistance with paperwork, legal processes, and
+                administrative tasks, easing the path to documentation and local
+                services.
+              </p>
+            </div>
+      
+            <!-- Card 4 -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+              <div class="card-icon">
+                <i class="fas fa-users-cog"></i>
+              </div>
+              <h3>Empowerment Programs</h3>
+              <p>
+                Skill-building workshops, job placement support, and ongoing career
+                coaching foster self-reliance and long-term success.
+              </p>
+            </div>
+          </div>
+      
+          <!-- CTA (optional) -->
+          <div class="services-cta">
+            <p>Ready to learn more about our unique approach?</p>
+            <a href="#contact-us" class="services-btn">Contact HopeBridge</a>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="global-impact-section" id="global-impact">
+        <!-- Parallax World Map BG -->
+        <div class="map-background"></div>
+      
+        <!-- Animated Orbs for Global Reach -->
+        <div class="orb orb1" data-aos="zoom-in"></div>
+        <div class="orb orb2" data-aos="zoom-in"></div>
+        <div class="orb orb3" data-aos="zoom-in"></div>
+      
+        <!-- Main Content -->
+        <div class="impact-content">
+          <h2 class="impact-title" data-aos="fade-up">
+            Bringing Hope Across <span>6 Continents</span>
+          </h2>
+          <p class="impact-stats" data-aos="fade-up" data-aos-delay="200">
+            Over <span class="highlight">217,924</span> lives impacted and counting 
+          </p>
+          <p class="impact-desc" data-aos="fade-up" data-aos-delay="400">
+            From bustling cities to remote communities, HopeBridge is forging pathways 
+            of support. Each orb represents a region where we’ve helped refugees 
+            rebuild, thrive, and chart a new course toward a brighter future.
+          </p>
+          <a href="#donation" class="impact-btn" data-aos="fade-up" data-aos-delay="600">
+            Join Our Global Movement
+          </a>
+        </div>
+      </section>
+
+
+
+
+      <section class="journey-timeline" id="journey-timeline">
+        <!-- Wave Top Shape (optional) -->
+        <div class="wave-shape wave-top"></div>
+      
+        <!-- Main Container -->
+        <div class="timeline-container">
+          <h2 class="timeline-title" data-aos="fade-up">
+            Your Journey With HopeBridge
+          </h2>
+          <p class="timeline-intro" data-aos="fade-up" data-aos-delay="200">
+            Discover how our tailored process ushers refugees from arrival to 
+            independence—one carefully planned step at a time.
+          </p>
+      
+          <!-- Timeline Steps -->
+          <div class="timeline-steps">
+            <!-- Step 1 -->
+            <div class="timeline-step" data-aos="fade-right" data-aos-delay="300">
+              <div class="step-number">1</div>
+              <h3>Initial Assessment</h3>
+              <p>
+                Our team evaluates each refugee’s background, immediate needs, 
+                and unique challenges, ensuring a personalized roadmap to success.
+              </p>
+            </div>
+      
+            <!-- Step 2 -->
+            <div class="timeline-step" data-aos="fade-left" data-aos-delay="400">
+              <div class="step-number">2</div>
+              <h3>Safe Housing & Basics</h3>
+              <p>
+                Secure shelter and essential supplies form the bedrock of 
+                stability—setting the stage for a fresh start.
+              </p>
+            </div>
+      
+            <!-- Step 3 -->
+            <div class="timeline-step" data-aos="fade-right" data-aos-delay="500">
+              <div class="step-number">3</div>
+              <h3>Cultural Orientation</h3>
+              <p>
+                Language lessons, mentorship programs, and community immersion 
+                help refugees adapt swiftly and confidently.
+              </p>
+            </div>
+      
+            <!-- Step 4 -->
+            <div class="timeline-step" data-aos="fade-left" data-aos-delay="600">
+              <div class="step-number">4</div>
+              <h3>Legal & Administrative Support</h3>
+              <p>
+                From visa documentation to local registration, 
+                we navigate the complexities so you can focus on moving forward.
+              </p>
+            </div>
+      
+            <!-- Step 5 -->
+            <div class="timeline-step" data-aos="fade-right" data-aos-delay="700">
+              <div class="step-number">5</div>
+              <h3>Empowerment & Skill Building</h3>
+              <p>
+                Professional training, career guidance, and networking opportunities 
+                pave the way for long-term self-reliance.
+              </p>
+            </div>
+      
+            <!-- Step 6 -->
+            <div class="timeline-step" data-aos="fade-left" data-aos-delay="800">
+              <div class="step-number">6</div>
+              <h3>Community Integration</h3>
+              <p>
+                We ensure a smooth transition into vibrant local communities—fostering 
+                friendships, opportunities, and a true sense of belonging.
+              </p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Wave Bottom Shape (optional) -->
+        <div class="wave-shape wave-bottom"></div>
+      </section>
+
+
+
+      <section class="voices-of-hope" id="voices-of-hope">
+        <!-- Parallax Background (Optional) -->
+        <div class="voices-bg"></div>
+      
+        <!-- Rotating Text Ring (Positioned top-right) -->
+        <div class="rotating-ring">
+          <p class="ring-text">
+            VOICES OF HOPE • UNITY • RESILIENCE • HOPEBRIDGE • VOICES OF HOPE • UNITY • RESILIENCE • HOPEBRIDGE
+          </p>
+        </div>
+      
+        <!-- Main Container -->
+        <div class="voices-content">
+          <!-- Title / Subtitle -->
+          <h2 class="voices-title" data-aos="fade-up">
+            Voices of Hope
+          </h2>
+          <p class="voices-subtitle" data-aos="fade-up" data-aos-delay="200">
+            Inspiring messages, stories, and reflections from refugees on the path to a new dawn.
+          </p>
+      
+          <!-- Testimonial / Story Cards -->
+          <div class="voices-grid">
+            <!-- Card 1 -->
+            <div class="voice-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-image">
+                <img src="refugetest.jpg" alt="Hope Story 1" />
+              </div>
+              <h3>Finding a Family Abroad</h3>
+              <p>
+                “For years, I felt invisible. Now, I've discovered a community that 
+                sees me for who I am and supports my dreams. HopeBridge truly gave 
+                me a new family.”
+              </p>
+              <span class="card-author">– Lena, Age 29</span>
+            </div>
+      
+            <!-- Card 2 -->
+            <div class="voice-card" data-aos="fade-up" data-aos-delay="400">
+              <div class="card-image">
+                <img src="refugeetest.jpg" alt="Hope Story 2" />
+              </div>
+              <h3>Language &amp; Laughter</h3>
+              <p>
+                “The cultural barriers seemed enormous at first, but language 
+                classes and laughter bridged our differences faster than I 
+                ever imagined. I’m grateful every day.”
+              </p>
+              <span class="card-author">– Mohammad, Age 12</span>
+            </div>
+      
+            <!-- Card 3 -->
+            <div class="voice-card" data-aos="fade-up" data-aos-delay="500">
+              <div class="card-image">
+                <img src="testimony2.jpg" alt="Hope Story 3" />
+              </div>
+              <h3>Rebuilding Dreams</h3>
+              <p>
+                “After fleeing conflict, we never thought we'd find a place 
+                to truly call home again. HopeBridge gave us more than just 
+                a roof over our heads—they gave us hope for the future.”
+              </p>
+              <span class="card-author">– Sayeed, Age 26</span>
+            </div>
+          </div>
+      
+          <!-- CTA or Next Steps -->
+          <div class="voices-cta" data-aos="fade-up" data-aos-delay="600">
+            <p>Every voice is a bridge to a brighter tomorrow. Ready to inspire change?</p>
+            <a href="#donation" class="voices-btn">Share Your Story</a>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="together-bridge-section" id="together-bridge">
+        <!-- Subtle Pulsing Circle Background -->
+        <div class="pulsing-circle"></div>
+      
+        <div class="together-content">
+          <h2 class="together-title">
+            Together, We Are <span>The Bridge</span>
+          </h2>
+          <p class="together-subtitle">
+            Join thousands worldwide making direct impacts in the lives of refugees. 
+            Whether volunteering, offering resources, or sharing your voice of 
+            solidarity—every gesture counts.
+          </p>
+          <a href="#get-involved" class="together-btn">
+            Take the Next Step
+          </a>
+        </div>
+      </section>
+
+
+
+
+      <footer class="footer-section" id="footer">
+        <div class="footer-container">
+          <!-- Left Column: Brand & Tagline -->
+          <div class="footer-brand">
+            <div class="brand-logo">
+              <!-- Replace with your actual logo image or text -->
+              <img src="https://via.placeholder.com/60x60?text=HB" alt="HopeBridge Logo" />
+              <h3>HopeBridge</h3>
+            </div>
+            <p class="brand-tagline">
+              Bringing New Beginnings <br />
+              Empowering Refugees Everywhere
+            </p>
+          </div>
+      
+          <!-- Middle Columns: Links -->
+          <div class="footer-links">
+            <div class="link-column">
+              <h4>Donate</h4>
+              <ul>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#health">Health</a></li>
+                <li><a href="#women-empowerment">Women Empowerment</a></li>
+                <li><a href="#emergency-relief">Emergency Relief</a></li>
+              </ul>
+            </div>
+            <div class="link-column">
+              <h4>Help</h4>
+              <ul>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#privacy-policy">Privacy Policy</a></li>
+                <li><a href="#accessibility">Accessibility</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="link-column">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Horizontal Divider -->
+        <div class="footer-divider"></div>
+      
+        <!-- Bottom Area: Copyright & Social -->
+        <div class="footer-bottom">
+          <p>© 2025 HopeBridge. All rights reserved.</p>
+      
+          <div class="footer-social">
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </footer>
+
+
+
+
+
+      <script
+      defer src="js/all.min.js"
+ ></script>
+
+ 
+<script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ 
+     <!-- jQuery (if needed by other scripts) -->
+     <script src="js/jquery-3.2.1.min.js"></script>
+
+     <script>
+        
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Hero Slider Logic with Smooth Crossfade
+
+
+  // Initialize AOS animations
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+
+  // Mobile Navbar Toggle
+  const hamburger = document.getElementById("hamburger");
+  const sidebar = document.getElementById("sidebar");
+  const closebtn = document.getElementById("closebtn");
+
+  // Toggle sidebar on hamburger click
+  hamburger.addEventListener("click", () => {
+    if (sidebar.style.width === "250px") {
+      sidebar.style.width = "0";
+    } else {
+      sidebar.style.width = "250px";
+    }
+  });
+
+  // Close sidebar on clicking the close button
+  closebtn.addEventListener("click", () => {
+    sidebar.style.width = "0";
+  });
+
+  // Change Navbar style on Scroll
+  const navbar = document.querySelector(".navbar");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach((question) => {
+    question.addEventListener('click', () => {
+      // Check current state
+      const isExpanded = question.getAttribute('aria-expanded') === 'true';
+
+      // Close all other expanded FAQs for a "single open" style (optional)
+      // Otherwise remove this loop to allow multiple simultaneously open
+      faqQuestions.forEach((q) => {
+        q.setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle the clicked FAQ
+      question.setAttribute('aria-expanded', !isExpanded);
+    });
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+});
+     </script>
+  </body>
+
+  </html>

@@ -103,37 +103,98 @@
     background-color: var(--dark-text);
   }
   
-  /* Sidebar for Mobile Navigation */
-  .sidebar {
-    height: 100%;
-    width: 0;
+/* =========================
+   MODERN 2025 SIDEBAR
+   ========================= */
+   .sidebar {
     position: fixed;
-    z-index: 1500;
     top: 0;
     right: 0;
-    background-color: #ffffff;
+    width: 0;               /* Start closed */
+    height: 100%;
+    z-index: 1500;
     overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+    
+    /* Glassmorphism background & subtle border */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Safari support */
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+  
+    /* Animate opening/closing smoothly */
+    transition: width 0.5s ease, padding 0.5s ease;
+    padding-top: 60px; /* Keep top space for close button, etc. */
   }
-  .sidebar a {
-    padding: 8px 32px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: var(--dark-text);
-    display: block;
-    transition: 0.3s;
+  
+  /* Use a CSS class to open the sidebar, e.g. .sidebar.open */
+  .sidebar.open {
+    width: 250px; /* Default open width for bigger screens */
   }
-  .sidebar a:hover {
-    color: var(--primary-green);
-  }
+  
+  /* Close Button */
   .sidebar .closebtn {
     position: absolute;
     top: 20px;
     right: 25px;
     font-size: 36px;
-    margin-left: 50px;
+    cursor: pointer;
+  }
+  
+  /* Sidebar Links */
+  .sidebar a {
+    display: block;
+    padding: 12px 32px;
+    margin: 8px 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--dark-text);
+    position: relative; /* for potential hover underline or highlight */
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .sidebar a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--primary-green);
+  }
+  
+  /* Optional: fancy bottom border highlight on hover */
+  .sidebar a:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--primary-green);
+    transition: width 0.3s;
+  }
+  .sidebar a:hover::before {
+    width: 100%;
+  }
+  
+  /* MEDIA QUERIES */
+  /* Shrink the sidebar on smaller devices for better usability */
+  @media screen and (max-width: 768px) {
+    /* When open, the sidebar covers ~80% of the screen width */
+    .sidebar.open {
+      width: 80%;
+    }
+  }
+  
+  /* Fine-tune for very small screens if needed */
+  @media screen and (max-width: 480px) {
+    .sidebar a {
+      font-size: 1.1rem;
+    }
+    .sidebar .closebtn {
+      font-size: 32px;
+      right: 20px;
+    }
+    .sidebar.open {
+      width: 85%; /* or 90%, adjust as desired */
+    }
   }
   
   /* Responsive Navbar Adjustments */
