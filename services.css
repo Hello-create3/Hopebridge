@@ -584,7 +584,7 @@
     width: 100%;
     height: 100%;
     /* Replace with your real image path */
-    background: url('worldmap1.jpg') center/cover no-repeat;
+    background: url('images/worldmap1.jpg') center/cover no-repeat;
     background-attachment: fixed; /* parallax effect on desktops */
     z-index: -3;
     opacity: 0.25; /* subtle so orbs/text stand out */
