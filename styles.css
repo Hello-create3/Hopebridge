@@ -1437,4 +1437,25 @@
 .phone-contact a:hover, .email-contact a:hover {
   text-decoration: underline;
 }
+.cta-button {
+  text-align: center;
+  margin-top: 2rem;
+}
 
+.cta-button a {
+  background-color:var(--primary-green);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0, 119, 204, 0.3);
+}
+
+.cta-button a:hover {
+  background-color: var(--primary-green);
+  transform: translateY(-2px);
+}
