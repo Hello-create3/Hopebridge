@@ -1372,56 +1372,7 @@
     }
 
   }
- /* Reset & Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background-color: #f5f8fa;
-  color: #333;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #001f3f;
-  padding: 1rem 2rem;
-  color: #fff;
-}
-
-.navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-links li a {
-  color: #fff;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.nav-links li a:hover,
-.nav-links li a.active {
-  color: #00aced;
-}
 
 /* General Reset */
 * {
@@ -1603,34 +1554,7 @@ body.contact-body {
     transform: translateY(0);
   }
 }
-/* Header */
-.site-header {
-  background-color: #002244;
-  padding: 20px 0;
-  color: white;
-}
 
-.site-header .logo {
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.main-nav .nav-link {
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.main-nav .nav-link:hover,
-.main-nav .nav-link.active {
-  color: #00c2ff;
-}
 
 
 .contact-hero {
