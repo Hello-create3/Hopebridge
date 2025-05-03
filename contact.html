@@ -1,78 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact HopeBridge Relocation Agency to learn more about our services or get support." />
-  <meta name="keywords" content="HopeBridge, relocation services, contact us, refugees, support" />
-  <title>Contact Us | HopeBridge Relocation Agency</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - HopeBridge Relocation Agency</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
-  <!-- SEO Enhancements -->
-  <meta property="og:title" content="Contact Us | HopeBridge Relocation Agency" />
-  <meta property="og:description" content="Reach out to HopeBridge for relocation services and support." />
-  <meta property="og:image" content="https://via.placeholder.com/600x315?text=HopeBridge" />
-  <meta property="og:url" content="https://www.hopebridge.com/contact.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Contact Us | HopeBridge Relocation Agency" />
-  <meta name="twitter:description" content="Get in touch with HopeBridge Relocation Agency for inquiries and support." />
-  <meta name="twitter:image" content="https://via.placeholder.com/600x315?text=HopeBridge" />
 </head>
-
 <body>
+  <!-- Header Section -->
+  <header class="site-header">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">HopeBridge</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="hamburger" onclick="document.querySelector('.sidebar').classList.add('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">HopeBridge</div>
-    <div class="nav-links">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="document.querySelector('.sidebar').classList.remove('open')">&times;</a>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a class="active" href="contact.html">Contact</a>
+      <a href="#">Services</a>
+      <a href="contact.html">Contact</a>
     </div>
-  </nav>
+  </header>
 
-  <!-- Contact Hero Section -->
+  <!-- Hero Contact Section -->
   <section class="contact-hero">
-    <div class="contact-hero-content">
-      <h1>Contact Us</h1>
-      <p>We’d love to hear from you. Reach out with any questions or support inquiries!</p>
+    <div class="hero-text">
+      <h2 class="animated fadeInDown">Let's Talk!</h2>
+      <p class="animated fadeInUp">We’re here to help you with your relocation journey.</p>
     </div>
   </section>
 
-  <!-- Contact Methods -->
-  <section class="contact-methods">
-    <div class="contact-container">
-      <h2>Get in Touch</h2>
-      <p>Choose one of the following methods to reach us:</p>
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-form">
+      <h3>Get in Touch</h3>
+      <form id="contactForm" action="https://formspree.io/f/mwpolnwg" method="POST">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
 
-      <!-- WhatsApp Contact -->
-      <div class="whatsapp-contact">
-        <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-icon-link">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" />
-          Chat on WhatsApp
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <p><strong>Email:</strong> support@hopebridge.com</p>
+      <p><strong>Phone:</strong> +234 800 000 0000</p>
+      <p><strong>Location:</strong> Lagos, Nigeria</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/YourPage" target="_blank" class="social-link">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+        </a>
+        <a href="https://twitter.com/YourProfile" target="_blank" class="social-link">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+        <a href="https://www.instagram.com/YourProfile" target="_blank" class="social-link">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
         </a>
       </div>
-
-      <!-- Email Contact -->
-      <div class="email-contact">
-        <p>Email us directly: <a href="mailto:info@hopebridge.com">info@hopebridge.com</a></p>
-      </div>
-
-      <!-- Phone Contact -->
-      <div class="phone-contact">
-        <p>Call us: <a href="tel:+1234567890">+1 234 567 890</a></p>
-      </div>
-
- 
     </div>
   </section>
 
+<!-- FAQ Section -->
+<section class="faq-section" id="faq">
+  <div class="faq-floating-obj"></div>
+  <div class="faq-floating-obj2"></div>
+
+  <div class="faq-container">
+    <h2>Frequently Asked Questions</h2>
+
+    <!-- FAQ Item 1 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>How can I get in touch with you?</span>
+        <i class="faq-icon fas fa-plus"></i>
+      </button>
+      <div class="faq-answer">
+        <p>
+          You can contact us through our <a href="#contact">Contact Us</a> page. You’ll find our email, phone number, and social media links there.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 2 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What’s the best way to reach customer support?</span>
+        <i class="faq-icon fas fa-plus"></i>
+      </button>
+      <div class="faq-answer">
+        <p>
+          For the fastest response, we recommend reaching out via our contact form on the <a href="#contact">Contact Us</a> page. Alternatively, you can email us directly.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 3 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Do you offer live chat support?</span>
+        <i class="faq-icon fas fa-plus"></i>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Currently, we do not offer live chat support, but you can reach us via email or our contact form for any inquiries, and we'll get back to you as soon as possible.
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 4 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>Can I contact you through social media?</span>
+        <i class="faq-icon fas fa-plus"></i>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Yes! You can reach out to us on our social media platforms. Visit the footer or <a href="contact.html" style="color: #a3e635; text-decoration: none;">Contact Us</a>
+
+        </p>
+      </div>
+    </div>
+
+    <!-- FAQ Item 5 -->
+    <div class="faq-item">
+      <button class="faq-question" aria-expanded="false">
+        <span>What are your office hours?</span>
+        <i class="faq-icon fas fa-plus"></i>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Our office hours are Monday to Friday, 9 AM to 5 PM. We are closed on weekends and public holidays.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
   <!-- Footer Section -->
   <footer class="footer-section" id="footer">
     <div class="footer-container">
-      <!-- Left Column: Brand & Tagline -->
       <div class="footer-brand">
         <div class="brand-logo">
           <img src="https://via.placeholder.com/60x60?text=HB" alt="HopeBridge Logo" />
@@ -83,63 +168,53 @@
           Empowering Refugees Everywhere
         </p>
       </div>
-
-      <!-- Middle Columns: Links -->
-      <div class="footer-links">
-        <div class="link-column">
-          <h4>Donate</h4>
-          <ul>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#health">Health</a></li>
-            <li><a href="#women-empowerment">Women Empowerment</a></li>
-            <li><a href="#emergency-relief">Emergency Relief</a></li>
-          </ul>
-        </div>
-        <div class="link-column">
-          <h4>Help</h4>
-          <ul>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#privacy-policy">Privacy Policy</a></li>
-            <li><a href="#accessibility">Accessibility</a></li>
-            <li><a href="#contact-us">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="link-column">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#about-us">About Us</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-          </ul>
-        </div>
-      </div>
+      <!-- Footer links... -->
     </div>
 
-    <!-- Horizontal Divider -->
     <div class="footer-divider"></div>
 
-    <!-- Bottom Area: Copyright & Social -->
     <div class="footer-bottom">
       <p>© 2025 HopeBridge. All rights reserved.</p>
-
-      <div class="footer-social">
-        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </div>
     </div>
   </footer>
-
+  <script>
+    // FAQ toggle logic
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !expanded);
+        const icon = button.querySelector('.faq-icon');
+        const answer = button.nextElementSibling;
+  
+        if (!expanded) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          icon.classList.remove('fa-plus');
+          icon.classList.add('fa-minus');
+        } else {
+          answer.style.maxHeight = null;
+          icon.classList.remove('fa-minus');
+          icon.classList.add('fa-plus');
+        }
+      });
+    });
+  
+    // Form submission with forced reload
+    document.addEventListener('DOMContentLoaded', () => {
+      const contactForm = document.getElementById('contactForm');
+  
+      contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(contactForm);
+  
+        fetch('https://formspree.io/f/mwpolnwg', {
+          method: 'POST',
+          body: formData,
+        }).finally(() => {
+          location.reload(); // Reload after submission regardless of outcome
+        });
+      });
+    });
+  </script>
+   
 </body>
-
 </html>
