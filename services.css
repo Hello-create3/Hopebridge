@@ -62,6 +62,7 @@
     color: white; /* Initially white */
     font-weight: 500;
     transition: color 0.3s ease;
+    font-weight: bold;
   }
   
   /* Underline Hover Effect */
@@ -103,7 +104,8 @@
   }
   .navbar.scrolled .hamburger span {
     background-color: var(--dark-text);
-  }/* =========================
+  }
+  /* =========================
    MODERN 2025 SIDEBAR
    ========================= */
 .sidebar {
@@ -285,7 +287,7 @@
   
   /* Hero Title with Pulsing Glow */
   .hero-title {
-    font-family: 'Poiret One', cursive;
+    font-family: var(--font-secondary);
     font-size: 6.5rem;
     letter-spacing: 5px;
     margin-bottom: 20px;

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us - HopeBridge Relocation Agency</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="contact.css" />
 </head>
@@ -34,170 +35,186 @@
       <a href="contact.html">Contact</a>
     </div>
   </header>
+<!-- Contact Hero -->
+<section class="contact-hero" id="contact">
+  <div class="hero-overlay"></div>
+  <div class="hero-text" data-aos="fade-down">
+    <h2>Let’s Talk!</h2>
+    <p>We’re here to help you on your relocation journey.</p>
+  </div>
+  <div class="hero-blob blob1"></div>
+  <div class="hero-blob blob2"></div>
+</section>
 
-  <!-- Hero Contact Section -->
-  <section class="contact-hero">
-    <div class="hero-text">
-      <h2 class="animated fadeInDown">Let's Talk!</h2>
-      <p class="animated fadeInUp">We’re here to help you with your relocation journey.</p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact-section">
-    <div class="contact-form">
+<!-- Contact Section -->
+<section class="contact-section" data-aos="fade-up">
+  <div class="contact-container">
+    <div class="contact-card form-card" data-aos="fade-right">
       <h3>Get in Touch</h3>
       <form id="contactForm" action="https://formspree.io/f/mwpolnwg" method="POST">
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Your Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-
+        <div class="input-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="input-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="input-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
         <button type="submit" class="btn">Send Message</button>
       </form>
     </div>
 
-    <div class="contact-info">
+    <div class="contact-card info-card" data-aos="fade-left">
       <h3>Contact Information</h3>
-      <p><strong>Email:</strong> support@hopebridge.com</p>
-      <p><strong>Phone:</strong> +234 800 000 0000</p>
-      <p><strong>Location:</strong> Lagos, Nigeria</p>
+      <ul class="info-list">
+        <li><strong>Email:</strong> support@hopebridge.com</li>
+        <li><strong>Phone:</strong> +234 800 000 0000</li>
+        <li><strong>Location:</strong> Lagos, Nigeria</li>
+      </ul>
       <div class="social-links">
-        <a href="https://www.facebook.com/YourPage" target="_blank" class="social-link">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-        </a>
-        <a href="https://twitter.com/YourProfile" target="_blank" class="social-link">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-        </a>
-        <a href="https://www.instagram.com/YourProfile" target="_blank" class="social-link">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-        </a>
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- FAQ Section -->
 <section class="faq-section" id="faq">
-  <div class="faq-floating-obj"></div>
-  <div class="faq-floating-obj2"></div>
-
+  <h2 data-aos="fade-up">Frequently Asked Questions</h2>
   <div class="faq-container">
-    <h2>Frequently Asked Questions</h2>
-
-    <!-- FAQ Item 1 -->
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
       <button class="faq-question" aria-expanded="false">
         <span>How can I get in touch with you?</span>
-        <i class="faq-icon fas fa-plus"></i>
+        <i class="fas fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        <p>
-          You can contact us through our <a href="#contact">Contact Us</a> page. You’ll find our email, phone number, and social media links there.
-        </p>
+        <p>You can reach us via the form above, email, or phone listed in the Contact section. We’ll respond within 24 hours.</p>
       </div>
     </div>
-
-    <!-- FAQ Item 2 -->
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
       <button class="faq-question" aria-expanded="false">
         <span>What’s the best way to reach customer support?</span>
-        <i class="faq-icon fas fa-plus"></i>
+        <i class="fas fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        <p>
-          For the fastest response, we recommend reaching out via our contact form on the <a href="#contact">Contact Us</a> page. Alternatively, you can email us directly.
-        </p>
+        <p>Use our contact form for fastest support—alternatively email us at support@hopebridge.com.</p>
       </div>
     </div>
-
-    <!-- FAQ Item 3 -->
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
       <button class="faq-question" aria-expanded="false">
         <span>Do you offer live chat support?</span>
-        <i class="faq-icon fas fa-plus"></i>
+        <i class="fas fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        <p>
-          Currently, we do not offer live chat support, but you can reach us via email or our contact form for any inquiries, and we'll get back to you as soon as possible.
-        </p>
+        <p>Not yet—please use the form or email, and we’ll get back to you promptly.</p>
       </div>
     </div>
-
-    <!-- FAQ Item 4 -->
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
       <button class="faq-question" aria-expanded="false">
         <span>Can I contact you through social media?</span>
-        <i class="faq-icon fas fa-plus"></i>
+        <i class="fas fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        <p>
-          Yes! You can reach out to us on our social media platforms. Visit the footer or <a href="contact.html" style="color: #a3e635; text-decoration: none;">Contact Us</a>
-
-        </p>
+        <p>Yes—our social icons above link directly to Facebook, Twitter, and Instagram.</p>
       </div>
     </div>
-
-    <!-- FAQ Item 5 -->
-    <div class="faq-item">
+    <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
       <button class="faq-question" aria-expanded="false">
         <span>What are your office hours?</span>
-        <i class="faq-icon fas fa-plus"></i>
+        <i class="fas fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        <p>
-          Our office hours are Monday to Friday, 9 AM to 5 PM. We are closed on weekends and public holidays.
-        </p>
+        <p>Mon–Fri, 9 AM–5 PM (GMT+1). Closed on weekends and public holidays.</p>
       </div>
     </div>
-
   </div>
 </section>
-  <!-- Footer Section -->
-  <footer class="footer-section" id="footer">
-    <div class="footer-container">
-      <div class="footer-brand">
-        <div class="brand-logo">
-          <img src="https://via.placeholder.com/60x60?text=HB" alt="HopeBridge Logo" />
-          <h3>HopeBridge</h3>
-        </div>
-        <p class="brand-tagline">
-          Bringing New Beginnings <br />
-          Empowering Refugees Everywhere
-        </p>
+
+
+<footer class="footer-section" id="footer">
+  <div class="footer-container">
+    <!-- Left Column: Brand & Tagline -->
+    <div class="footer-brand">
+      <div class="brand-logo">
+        <!-- Replace with your actual logo image or text -->
+        <img src="https://via.placeholder.com/60x60?text=HB" alt="HopeBridge Logo" />
+        <h3>HopeBridge</h3>
       </div>
-      <!-- Footer links... -->
+      <p class="brand-tagline">
+        Bringing New Beginnings <br />
+        Empowering Refugees Everywhere
+      </p>
     </div>
 
-    <div class="footer-divider"></div>
-
-    <div class="footer-bottom">
-      <p>© 2025 HopeBridge. All rights reserved.</p>
+    <!-- Middle Columns: Links -->
+    <div class="footer-links">
+      <div class="link-column">
+        <h4>Donate</h4>
+        <ul>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#health">Health</a></li>
+          <li><a href="#women-empowerment">Women Empowerment</a></li>
+          <li><a href="#emergency-relief">Emergency Relief</a></li>
+        </ul>
+      </div>
+      <div class="link-column">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#privacy-policy">Privacy Policy</a></li>
+          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="link-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
     </div>
-  </footer>
-  <script>
-    // FAQ toggle logic
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const expanded = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', !expanded);
-        const icon = button.querySelector('.faq-icon');
-        const answer = button.nextElementSibling;
-  
-        if (!expanded) {
-          answer.style.maxHeight = answer.scrollHeight + 'px';
-          icon.classList.remove('fa-plus');
-          icon.classList.add('fa-minus');
-        } else {
-          answer.style.maxHeight = null;
-          icon.classList.remove('fa-minus');
-          icon.classList.add('fa-plus');
-        }
-      });
-    });
+  </div>
+
+  <!-- Horizontal Divider -->
+  <div class="footer-divider"></div>
+
+  <!-- Bottom Area: Copyright & Social -->
+  <div class="footer-bottom">
+    <p>© 2025 HopeBridge. All rights reserved.</p>
+
+    <div class="footer-social">
+      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({ duration: 800, once: true });
+  });
+
+
   
     // Form submission with forced reload
     document.addEventListener('DOMContentLoaded', () => {
@@ -215,6 +232,14 @@
         });
       });
     });
+
+    document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !expanded);
+  });
+});
+
   </script>
    
 </body>
