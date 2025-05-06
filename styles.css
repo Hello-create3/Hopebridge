@@ -1594,3 +1594,145 @@
     display: none;
   }
 }
+/* Relocation Assistance Section */
+.relocation-assistance {
+  position: relative;
+  padding: 6rem 5% 7rem;
+  background-color: #fdfdfd;
+  overflow: hidden;
+}
+
+.relocation-assistance::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("images/relocation-bg.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  opacity: 0.08;
+  z-index: -2;
+}
+
+/* Floating Glow Circles */
+.relocation-assistance::after,
+.relocation-assistance .relocation-container::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: floatAnim 6s ease-in-out infinite alternate;
+  z-index: -1;
+}
+.relocation-assistance::after {
+  width: 120px;
+  height: 120px;
+  bottom: 10%;
+  right: 10%;
+  background: radial-gradient(circle, rgba(163, 230, 53, 0.3), transparent 70%);
+}
+.relocation-assistance .relocation-container::before {
+  width: 100px;
+  height: 100px;
+  top: 8%;
+  left: 8%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.2), transparent 80%);
+}
+
+@keyframes floatAnim {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+
+.relocation-container {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  font-family: var(--font-primary);
+}
+
+.relocation-container h2 {
+  font-size: 2.8rem;
+  font-family: var(--font-secondary);
+  margin-bottom: 1rem;
+  color: var(--dark-text);
+}
+.relocation-container h2 span {
+  color: var(--primary-green);
+}
+
+.relocation-container p {
+  font-size: 1rem;
+  color: #444;
+  max-width: 750px;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
+}
+
+/* Steps Cards */
+.relocation-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.step-card {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+.step-card i {
+  font-size: 2.5rem;
+  color: var(--primary-green);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.step-card:hover i {
+  transform: scale(1.2) rotate(5deg);
+  color: #b4f127; /* Lighter green or highlight shade */
+}
+
+.step-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-secondary);
+}
+.step-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* CTA Button */
+.cta-button a {
+  background-color: var(--primary-green);
+  color: var(--dark-text);
+  padding: 1rem 2rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.cta-button a:hover {
+  background-color: #c6f98c;
+  transform: translateY(-3px);
+}
+
+/* Responsive Tweaks */
+@media screen and (max-width: 768px) {
+  .relocation-container h2 {
+    font-size: 2rem;
+  }
+  .step-card {
+    padding: 1.5rem 1.2rem;
+  }
+}
