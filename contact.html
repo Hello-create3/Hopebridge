@@ -17,7 +17,7 @@
       <div class="logo">HopeBridge</div>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="aboutus.html">About</a>
         <a href="services.html">Services</a>
         <a href="contact.html">Contact</a>
       </div>
@@ -30,55 +30,102 @@
     <div class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="document.querySelector('.sidebar').classList.remove('open')">&times;</a>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
+      <a href="aboutus.html">About</a>
       <a href="#">How It Works</a>
       <a href="contact.html">Contact</a>
     </div>
   </header>
 <!-- Contact Hero -->
-<section class="contact-hero" id="contact">
+ <!-- Contact Hero -->
+ <section class="contact-hero" id="contact">
   <div class="hero-overlay"></div>
-  <div class="hero-text" data-aos="fade-down">
-    <h2>Let’s Talk!</h2>
-    <p>We’re here to help you on your relocation journey.</p>
+  <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+    <h2>Let's Connect</h2>
+    <p>We're dedicated to making your relocation journey seamless and stress-free.</p>
   </div>
   <div class="hero-blob blob1"></div>
   <div class="hero-blob blob2"></div>
+  <div class="hero-blob blob3"></div>
 </section>
 
 <!-- Contact Section -->
-<section class="contact-section" data-aos="fade-up">
+<section class="contact-section">
   <div class="contact-container">
-    <div class="contact-card form-card" data-aos="fade-right">
-      <h3>Get in Touch</h3>
-      <form id="contactForm" action="https://formspree.io/f/mwpolnwg" method="POST">
-        <div class="input-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-        <div class="input-group">
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div class="input-group">
-          <label for="message">Your Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
+    <div class="contact-card form-card" data-aos="fade-up" data-aos-duration="800">
+      <div class="card-header">
+        <h3>Send Us a Message</h3>
+      </div>
+      <div class="card-body">
+        <form id="contactForm" action="https://formspree.io/f/mwpolnwg" method="POST">
+          <div class="input-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="input-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+          </div>
+          <div class="input-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="How can we help you?" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn">
+            Send Message
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
     </div>
 
-    <div class="contact-card info-card" data-aos="fade-left">
-      <h3>Contact Information</h3>
-      <ul class="info-list">
-        <li><strong>Email:</strong> support@hopebridge.com</li>
-        <li><strong>Phone:</strong> +234 800 000 0000</li>
-        <li><strong>Location:</strong> Lagos, Nigeria</li>
-      </ul>
-      <div class="social-links">
-        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <div class="contact-card info-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+      <div class="card-header">
+        <h3>Reach Out to Us</h3>
+      </div>
+      <div class="card-body">
+        <ul class="info-list">
+          <li class="info-item">
+            <div class="info-item-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="info-item-content">
+              <h4>Email Us</h4>
+              <p>support@hopebridge.com</p>
+            </div>
+          </li>
+          <li class="info-item">
+            <div class="info-item-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="info-item-content">
+              <h4>Call Us</h4>
+              <p>+234 800 000 0000</p>
+            </div>
+          </li>
+          <li class="info-item">
+            <div class="info-item-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info-item-content">
+              <h4>Visit Us</h4>
+              <p>Lagos, Nigeria</p>
+            </div>
+          </li>
+        </ul>
+        <h4>Connect With Us</h4>
+        <div class="social-links">
+          <a href="#" class="social-link" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-link" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-link" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-link" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -86,55 +133,70 @@
 
 <!-- FAQ Section -->
 <section class="faq-section" id="faq">
-  <h2 data-aos="fade-up">Frequently Asked Questions</h2>
+  <div class="faq-decoration faq-decoration-1"></div>
+  <div class="faq-decoration faq-decoration-2"></div>
+  <div class="faq-decoration faq-decoration-3"></div>
+  
+  <div class="h2text"><h2>Frequently Asked Questions</h2></div>
   <div class="faq-container">
-    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+    <div class="faq-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
       <button class="faq-question" aria-expanded="false">
         <span>How can I get in touch with you?</span>
         <i class="fas fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        <p>You can reach us via the form above, email, or phone listed in the Contact section. We’ll respond within 24 hours.</p>
+        <p>You can reach us via the contact form above, email, or phone listed in the Contact section. We prioritize all inquiries and aim to respond within 24 hours during business days.</p>
       </div>
     </div>
-    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+    
+    <div class="faq-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
       <button class="faq-question" aria-expanded="false">
-        <span>What’s the best way to reach customer support?</span>
+        <span>What's the best way to reach customer support?</span>
         <i class="fas fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        <p>Use our contact form for fastest support—alternatively email us at support@hopebridge.com.</p>
+        <p>For the fastest support, please use our contact form—alternatively, you can email us directly at support@hopebridge.com or call our support line during business hours.</p>
       </div>
     </div>
-    <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+    
+    <div class="faq-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
       <button class="faq-question" aria-expanded="false">
         <span>Do you offer live chat support?</span>
         <i class="fas fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        <p>Not yet—please use the form or email, and we’ll get back to you promptly.</p>
+        <p>Not at the moment—please use our contact form or email, and we'll get back to you promptly. We're working on implementing live chat support in the near future.</p>
       </div>
     </div>
-    <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+    
+    <div class="faq-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
       <button class="faq-question" aria-expanded="false">
         <span>Can I contact you through social media?</span>
         <i class="fas fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        <p>Yes—our social icons above link directly to Facebook, Twitter, and Instagram.</p>
+        <p>Yes—we're active on all major social media platforms. Feel free to reach out through Facebook, Twitter, Instagram, or LinkedIn by clicking the social icons in our contact section.</p>
       </div>
     </div>
-    <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+    
+    <div class="faq-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
       <button class="faq-question" aria-expanded="false">
         <span>What are your office hours?</span>
         <i class="fas fa-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        <p>Mon–Fri, 9 AM–5 PM (GMT+1). Closed on weekends and public holidays.</p>
+        <p>Our team is available Monday through Friday, from 9 AM to 5 PM (GMT+1). We're closed on weekends and public holidays, but we monitor urgent inquiries during off-hours.</p>
       </div>
     </div>
   </div>
 </section>
+
+
+
+
+<div class="back-to-top" id="backToTop">
+  <i class="fas fa-arrow-up"></i>
+</div>
 
 
 <footer class="footer-section" id="footer">
@@ -216,6 +278,7 @@
 
 
   
+  
     // Form submission with forced reload
     document.addEventListener('DOMContentLoaded', () => {
       const contactForm = document.getElementById('contactForm');
@@ -233,12 +296,41 @@
       });
     });
 
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e) => {
+      // You could add form validation or success message here
+      // This is just a placeholder for demonstration
+      console.log('Form submitted');
+    });
+    
+
     document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
     const expanded = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', !expanded);
   });
 });
+
+
+    // Back to Top Button functionality
+    const backToTopButton = document.getElementById('backToTop');
+    
+    // Show button when user scrolls down 300px
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    
+    // Smooth scroll to top when button is clicked
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
 
   </script>
    
