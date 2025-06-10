@@ -1,0 +1,59 @@
+# robots.txt for Static Website
+# This file tells web crawlers which pages or files they can or can't request from your site
+
+# Allow all crawlers to access all content (default for most static sites)
+User-agent: *
+Allow: /
+
+# Crawl delay (optional) - time in seconds between requests
+# Uncomment and adjust if you want to slow down crawlers
+# Crawl-delay: 1
+
+# Block specific directories that shouldn't be crawled
+# Uncomment any of these if you have these directories:
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /temp/
+# Disallow: /backup/
+# Disallow: /staging/
+# Disallow: /test/
+# Disallow: /dev/
+
+# Block specific file types (uncomment if needed)
+# Disallow: *.pdf$
+# Disallow: *.doc$
+# Disallow: *.docx$
+# Disallow: *.zip$
+
+# Block search and filter pages to avoid duplicate content issues
+# Disallow: /*?*search*
+# Disallow: /*?*filter*
+# Disallow: /*?*sort*
+
+# Allow specific important crawlers (already covered by User-agent: * above)
+# But you can be explicit if needed:
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block problematic crawlers (uncomment if you experience issues)
+# User-agent: AhrefsBot
+# Disallow: /
+
+# User-agent: MJ12bot
+# Disallow: /
+
+# User-agent: SemrushBot
+# Disallow: /
+
+# Sitemap location (replace with your actual sitemap URL)
+Sitemap: https://hopebridgerelocation.org/sitemap.xml
+
+# Additional sitemaps if you have them
+# Sitemap: https://hopebridgerelocation.org/sitemap-images.xml
+# Sitemap: https://hopebridgerelocation.org/sitemap-news.xml
+
+# Note: This file should be placed in the root directory of your website
+# URL: https://hopebridgerelocation.org/robots.txt
