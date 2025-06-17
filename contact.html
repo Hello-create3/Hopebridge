@@ -403,66 +403,54 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // ✅ Initialize AOS (Animate On Scroll)
     AOS.init({ duration: 800, once: true });
-  });
 
-
-  
-  
-    // Form submission with forced reload
-    document.addEventListener('DOMContentLoaded', () => {
-      const contactForm = document.getElementById('contactForm');
-  
+    // ✅ Form submission with reload
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
       contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
         const formData = new FormData(contactForm);
-  
+
         fetch('https://formspree.io/f/mjkrokrj', {
           method: 'POST',
           body: formData,
         }).finally(() => {
-          location.reload(); // Reload after submission regardless of outcome
+          location.reload(); // Reload after submission
         });
       });
-    });
+    }
 
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', (e) => {
-      // You could add form validation or success message here
-      // This is just a placeholder for demonstration
-      console.log('Form submitted');
-    });
-    
-
+    // ✅ FAQ toggle
     document.querySelectorAll('.faq-question').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', !expanded);
-  });
-});
-
-
-    // Back to Top Button functionality
-    const backToTopButton = document.getElementById('backToTop');
-    
-    // Show button when user scrolls down 300px
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
-      }
-    });
-    
-    // Smooth scroll to top when button is clicked
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
       });
     });
 
-  </script>
+    // ✅ Back to Top functionality
+    const backToTopButton = document.getElementById('backToTop');
+    if (backToTopButton) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.add('show');
+        } else {
+          backToTopButton.classList.remove('show');
+        }
+      });
+
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+  });
+</script>
+
    
 </body>
 </html>
