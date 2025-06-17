@@ -95,7 +95,7 @@
       <a href="contact.html">Contact</a>
     </div>
   </header>
-  
+<!-- Contact Hero -->
  <!-- Contact Hero -->
  <section class="contact-hero" id="contact">
   <div class="hero-overlay"></div>
@@ -117,7 +117,7 @@
         <h3>Send Us a Message</h3>
       </div>
       <div class="card-body">
-        <form id="contactForm" action="https://formspree.io/f/mjkrokrj" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/mwpolnwg" method="POST">
           <div class="input-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" required />
@@ -135,11 +135,8 @@
             <i class="fas fa-paper-plane"></i>
           </button>
         </form>
-        <div id="formResponse" style="margin-top: 1rem; color: green;"></div>
       </div>
     </div>
-  </div>
-</section>
 
     <!-- Contact Info Card -->
     <div class="contact-card info-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
@@ -409,15 +406,9 @@
     // ✅ Initialize AOS (Animate On Scroll)
     AOS.init({ duration: 800, once: true });
 
-    // ✅ Form submission with status message
+    // ✅ Form submission with reload
     const contactForm = document.getElementById('contactForm');
-    const formResponse = document.createElement('div');
-    formResponse.style.marginTop = '1rem';
-    formResponse.style.color = 'green';
-
     if (contactForm) {
-      contactForm.parentNode.appendChild(formResponse); // place response message under form
-
       contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
         const formData = new FormData(contactForm);
@@ -425,20 +416,8 @@
         fetch('https://formspree.io/f/mjkrokrj', {
           method: 'POST',
           body: formData,
-        })
-        .then(response => {
-          if (response.ok) {
-            formResponse.textContent = '✅ Message sent successfully!';
-            formResponse.style.color = 'green';
-            contactForm.reset();
-          } else {
-            formResponse.textContent = '❌ Something went wrong. Please try again.';
-            formResponse.style.color = 'red';
-          }
-        })
-        .catch(() => {
-          formResponse.textContent = '❌ Network error. Please try again later.';
-          formResponse.style.color = 'red';
+        }).finally(() => {
+          location.reload(); // Reload after submission
         });
       });
     }
