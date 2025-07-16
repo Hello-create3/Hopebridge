@@ -325,6 +325,28 @@ body {
   line-height: 1.5;
 }
 
+/* Styled Map Links inside Info Card */
+.info-item-content a {
+  display: inline-block;
+  color: #84cc16;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 6px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.info-item-content a:hover {
+  color: #65a30d;
+  transform: translateX(5px);
+  text-decoration: underline;
+}
+
+.info-item-content a[title] {
+  cursor: pointer;
+}
+
 .social-links {
   display: flex;
   gap: 1rem;
